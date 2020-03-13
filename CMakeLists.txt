@@ -93,14 +93,6 @@ find_package(catkin REQUIRED COMPONENTS
 #   cfg/DynReconf2.cfg
 # )
 
-add_executable(orb_posestamp src/orb_posestamp.cpp)
-target_link_libraries(orb_posestamp ${catkin_LIBRARIES})
-add_dependencies(orb_posestamp pose_stamp_generate_messages_cpp)
-
-add_executable(pose2d_posestamp src/pose2d_posestamp.cpp)
-target_link_libraries(pose2d_posestamp ${catkin_LIBRARIES})
-add_dependencies(pose2d_posestamp pose_stamp_generate_messages_cpp)
-
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -132,6 +124,14 @@ include_directories(
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/pose_stamp.cpp
 # )
+
+add_executable(orb_posestamp src/orb_posestamp.cpp)
+target_link_libraries(orb_posestamp ${catkin_LIBRARIES})
+add_dependencies(orb_posestamp pose_stamp_generate_messages_cpp)
+
+add_executable(pose2d_posestamp src/pose2d_posestamp.cpp)
+target_link_libraries(pose2d_posestamp ${catkin_LIBRARIES})
+add_dependencies(pose2d_posestamp pose_stamp_generate_messages_cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
